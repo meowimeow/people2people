@@ -74,9 +74,14 @@
         `${target.mbti} (선호 성향 ${wanted.map((x) => x.c).join('·')} 중 ${hit}/${wanted.length} 일치)`);
     }
 
-    const shared = owner.hobbies.filter((h) => target.hobbies.includes(h));
-    add('hobbies', true, shared.length / Math.min(3, owner.hobbies.length),
-      shared.length ? `겹침: ${shared.join('·')}` : '겹치는 취미 없음');
+    // 취미를 하나도 고르지 않은 쪽이 있으면 이 항목은 계산에서 뺀다 (0으로 나누면 NaN이 되어 점수 전체가 무효가 된다)
+    if (!owner.hobbies.length) add('hobbies', false, 0, '취미를 정하지 않아 제외');
+    else if (!target.hobbies.length) add('hobbies', false, 0, '상대가 취미를 입력하지 않아 제외');
+    else {
+      const shared = owner.hobbies.filter((h) => target.hobbies.includes(h));
+      add('hobbies', true, shared.length / Math.min(3, owner.hobbies.length),
+        shared.length ? `겹침: ${shared.join('·')}` : '겹치는 취미 없음');
+    }
 
     const drink = 1 - Math.abs(DRINK[owner.drinking] - DRINK[target.drinking]) / 2;
     const rel = owner.religion === target.religion ? 1 : (owner.religion === '무교' || target.religion === '무교') ? 0.6 : 0.2;
