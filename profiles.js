@@ -183,6 +183,168 @@ const PROFILES = [
     bio: '집에서 요리하고 영화 보는 시간이 소중해요. 천천히 편해지는 사이가 좋아요.',
     want: { mbti: 'INF-', seeking: '여', ageMin: 24, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
       sameAreaOnly: false, styles: ['차분', '깔끔'], talk: 'empathy', weights: w(2, 1, 3, 3, 3, 5, 4, 5, 3) }
+  },
+
+  // ───────── 추가 프로필 20명 (남 10 / 여 10) ─────────
+  {
+    id: 'p21', nickname: '승민', gender: '남', mbti: 'ENTJ', age: 25, height: 176, region: '광주',
+    job: '대학생', stability: 2, style: '캐주얼', humor: 4, empathy: 3, energy: 4,
+    hobbies: ['축구', '게임', '맛집탐방'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '게임하다 배고프면 같이 맛집 가요. 승부욕은 있지만 져줄 때도 있어요.',
+    want: { mbti: 'E---', seeking: '여', ageMin: 21, ageMax: 26, heightMin: null, acceptSmoker: true, excludeReligions: [],
+      sameAreaOnly: false, styles: ['캐주얼', '스포티'], talk: 'humor', weights: w(3, 2, 3, 3, 1, 4, 4, 2, 2) }
+  },
+  {
+    id: 'p22', nickname: '재원', gender: '남', mbti: 'ISFP', age: 27, height: 181, region: '서울',
+    job: '개발자', stability: 4, style: '깔끔', humor: 3, empathy: 4, energy: 2,
+    hobbies: ['독서', '영화', '요리'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '원함',
+    bio: '퇴근 후엔 책 읽고 파스타 만들어요. 조용한 데이트가 좋아요.',
+    want: { mbti: '-NF-', seeking: '여', ageMin: 23, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['차분', '깔끔'], talk: 'empathy', weights: w(2, 2, 4, 3, 3, 5, 3, 4, 2) }
+  },
+  {
+    id: 'p23', nickname: '도현', gender: '남', mbti: 'ENFP', age: 23, height: 178, region: '대전',
+    job: '대학생', stability: 2, style: '스포티', humor: 5, empathy: 3, energy: 5,
+    hobbies: ['클라이밍', '헬스', '여행'], smoking: '비흡연', drinking: '자주', religion: '무교', marriage: '미정',
+    bio: '주말엔 클라이밍장에 있어요. 같이 도전하고 같이 웃을 사람 찾아요.',
+    want: { mbti: 'E---', seeking: '여', ageMin: 21, ageMax: 27, heightMin: null, acceptSmoker: true, excludeReligions: [],
+      sameAreaOnly: false, styles: ['스포티', '캐주얼'], talk: 'humor', weights: w(3, 2, 2, 4, 1, 4, 5, 2, 2) }
+  },
+  {
+    id: 'p24', nickname: '윤호', gender: '남', mbti: 'ISTJ', age: 28, height: 183, region: '경기',
+    job: '회사원', stability: 4, style: '깔끔', humor: 3, empathy: 4, energy: 3,
+    hobbies: ['골프', '여행', '요리'], smoking: '비흡연', drinking: '가끔', religion: '천주교', marriage: '원함',
+    bio: '일 잘하고 잘 쉬는 사람이 되고 싶어요. 여행 계획은 제가 짤게요.',
+    want: { mbti: '-S-J', seeking: '여', ageMin: 24, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['깔끔'], talk: 'both', weights: w(2, 1, 3, 3, 4, 5, 3, 5, 3) }
+  },
+  {
+    id: 'p25', nickname: '성현', gender: '남', mbti: 'ENFJ', age: 22, height: 174, region: '인천',
+    job: '대학생', stability: 2, style: '트렌디', humor: 4, empathy: 4, energy: 5,
+    hobbies: ['콘서트', '사진', '카페'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '좋아하는 가수 콘서트 같이 갈 사람? 사진은 제가 잘 찍어요.',
+    want: { mbti: 'E-F-', seeking: '여', ageMin: 21, ageMax: 25, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['트렌디', '캐주얼'], talk: 'both', weights: w(4, 2, 3, 5, 1, 4, 5, 2, 2) }
+  },
+  {
+    id: 'p26', nickname: '민성', gender: '남', mbti: 'INFP', age: 26, height: 177, region: '부산',
+    job: '디자이너', stability: 3, style: '트렌디', humor: 4, empathy: 4, energy: 3,
+    hobbies: ['전시회', '사진', '드라이브'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '바다 보며 드라이브하는 걸 좋아해요. 취향 얘기는 오래 해도 안 질려요.',
+    want: { mbti: '-NF-', seeking: '여', ageMin: 23, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['트렌디', '차분'], talk: 'both', weights: w(3, 2, 4, 4, 2, 5, 4, 3, 3) }
+  },
+  {
+    id: 'p27', nickname: '지훈', gender: '남', mbti: 'INTJ', age: 24, height: 180, region: '충북',
+    job: '대학원생', stability: 3, style: '차분', humor: 2, empathy: 4, energy: 2,
+    hobbies: ['독서', '보드게임', '산책'], smoking: '비흡연', drinking: '안 마심', religion: '무교', marriage: '원함',
+    bio: '조용한 카페에서 보드게임 하는 날이 제일 행복해요.',
+    want: { mbti: 'IN--', seeking: '여', ageMin: 22, ageMax: 27, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: true, styles: ['차분'], talk: 'empathy', weights: w(2, 1, 5, 3, 3, 5, 4, 4, 3) }
+  },
+  {
+    id: 'p28', nickname: '우진', gender: '남', mbti: 'ESFP', age: 28, height: 175, region: '대구',
+    job: '자영업', stability: 3, style: '캐주얼', humor: 5, empathy: 3, energy: 5,
+    hobbies: ['축구', '낚시', '맛집탐방'], smoking: '흡연', drinking: '자주', religion: '무교', marriage: '미정',
+    bio: '사람 만나는 게 제일 재밌어요. 맛집은 제가 책임질게요.',
+    want: { mbti: '----', seeking: '여', ageMin: 24, ageMax: 28, heightMin: null, acceptSmoker: true, excludeReligions: [],
+      sameAreaOnly: false, styles: [], talk: 'humor', weights: w(3, 1, 2, 2, 3, 5, 3, 2, 1) }
+  },
+  {
+    id: 'p29', nickname: '이안', gender: '남', mbti: 'ENFJ', age: 24, height: 179, region: '서울',
+    job: '대학원생', stability: 3, style: '트렌디', humor: 4, empathy: 4, energy: 4,
+    hobbies: ['전시회', '러닝', '콘서트'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '러닝하고 브런치 먹는 일요일을 같이 보낼 사람 찾아요.',
+    want: { mbti: '-N--', seeking: '남', ageMin: 22, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['트렌디', '깔끔'], talk: 'both', weights: w(3, 1, 5, 4, 2, 5, 4, 3, 2) }
+  },
+  {
+    id: 'p30', nickname: '하람', gender: '남', mbti: 'INFJ', age: 27, height: 176, region: '경기',
+    job: '엔지니어', stability: 4, style: '깔끔', humor: 3, empathy: 4, energy: 2,
+    hobbies: ['독서', '요리', '영화'], smoking: '비흡연', drinking: '안 마심', religion: '무교', marriage: '원함',
+    bio: '조용한 저녁과 따뜻한 국물 요리를 좋아해요.',
+    want: { mbti: 'IN--', seeking: '남', ageMin: 23, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['깔끔', '차분'], talk: 'empathy', weights: w(2, 1, 4, 3, 3, 5, 3, 5, 3) }
+  },
+  {
+    id: 'p31', nickname: '소율', gender: '여', mbti: 'ENFP', age: 22, height: 163, region: '서울',
+    job: '대학생', stability: 2, style: '트렌디', humor: 4, empathy: 4, energy: 4,
+    hobbies: ['콘서트', '카페', '사진'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '카페 투어가 취미예요. 예쁜 곳 발견하면 같이 가요.',
+    want: { mbti: 'E---', seeking: '남', ageMin: 22, ageMax: 27, heightMin: 173, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['트렌디', '캐주얼'], talk: 'both', weights: w(3, 3, 4, 4, 1, 4, 5, 2, 2) }
+  },
+  {
+    id: 'p32', nickname: '가은', gender: '여', mbti: 'ISFJ', age: 26, height: 165, region: '광주',
+    job: '간호사', stability: 4, style: '깔끔', humor: 3, empathy: 5, energy: 3,
+    hobbies: ['요리', '영화', '여행'], smoking: '비흡연', drinking: '가끔', religion: '기독교', marriage: '원함',
+    bio: '야근하고 와도 웃게 해주는 사람이 좋아요. 휴가엔 여행 가고 싶어요.',
+    want: { mbti: '-S-J', seeking: '남', ageMin: 25, ageMax: 28, heightMin: 172, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: [], talk: 'empathy', weights: w(2, 3, 4, 2, 4, 5, 3, 5, 3) }
+  },
+  {
+    id: 'p33', nickname: '채은', gender: '여', mbti: 'ESTP', age: 24, height: 168, region: '대전',
+    job: '대학생', stability: 2, style: '스포티', humor: 5, empathy: 3, energy: 5,
+    hobbies: ['클라이밍', '헬스', '여행'], smoking: '비흡연', drinking: '자주', religion: '무교', marriage: '미정',
+    bio: '운동 후에 먹는 야식은 못 참아요. 같이 땀 흘릴 사람 환영!',
+    want: { mbti: 'E---', seeking: '남', ageMin: 22, ageMax: 28, heightMin: null, acceptSmoker: true, excludeReligions: [],
+      sameAreaOnly: false, styles: ['스포티', '캐주얼'], talk: 'humor', weights: w(3, 2, 3, 4, 1, 5, 5, 2, 2) }
+  },
+  {
+    id: 'p34', nickname: '다연', gender: '여', mbti: 'INFJ', age: 28, height: 161, region: '경기',
+    job: '회사원', stability: 5, style: '깔끔', humor: 3, empathy: 4, energy: 2,
+    hobbies: ['독서', '요가', '영화'], smoking: '비흡연', drinking: '안 마심', religion: '불교', marriage: '원함',
+    bio: '일상이 잔잔해서 좋아요. 대화가 잘 통하는 사람이면 충분해요.',
+    want: { mbti: 'IN--', seeking: '남', ageMin: 26, ageMax: 28, heightMin: 173, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['깔끔', '차분'], talk: 'empathy', weights: w(3, 3, 3, 2, 5, 4, 2, 5, 4) }
+  },
+  {
+    id: 'p35', nickname: '지아', gender: '여', mbti: 'INFP', age: 23, height: 166, region: '충북',
+    job: '대학생', stability: 3, style: '차분', humor: 3, empathy: 4, energy: 2,
+    hobbies: ['독서', '산책', '베이킹'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '주말엔 베이킹하고 산책해요. 갓 구운 빵 나눠 먹을 사람 찾아요.',
+    want: { mbti: '-NF-', seeking: '남', ageMin: 23, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['차분', '깔끔'], talk: 'empathy', weights: w(2, 1, 4, 3, 3, 5, 5, 4, 3) }
+  },
+  {
+    id: 'p36', nickname: '해린', gender: '여', mbti: 'ENFJ', age: 25, height: 169, region: '부산',
+    job: '디자이너', stability: 3, style: '트렌디', humor: 4, empathy: 4, energy: 4,
+    hobbies: ['전시회', '사진', '드라이브'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '취향 저격하는 사람이 좋아요. 바다 보러 갈 때 같이 가요.',
+    want: { mbti: '-NF-', seeking: '남', ageMin: 24, ageMax: 28, heightMin: 176, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['트렌디', '깔끔'], talk: 'both', weights: w(3, 4, 5, 5, 2, 4, 4, 2, 2) }
+  },
+  {
+    id: 'p37', nickname: '예나', gender: '여', mbti: 'ESFP', age: 27, height: 164, region: '대구',
+    job: '마케터', stability: 3, style: '캐주얼', humor: 5, empathy: 3, energy: 5,
+    hobbies: ['맛집탐방', '여행', '콘서트'], smoking: '비흡연', drinking: '자주', religion: '무교', marriage: '미정',
+    bio: '웃음 포인트 같은 사람이 최고예요. 여행 가면 사진 백 장은 찍어요.',
+    want: { mbti: 'E---', seeking: '남', ageMin: 25, ageMax: 28, heightMin: 175, acceptSmoker: true, excludeReligions: [],
+      sameAreaOnly: false, styles: [], talk: 'humor', weights: w(3, 3, 2, 2, 2, 5, 4, 2, 2) }
+  },
+  {
+    id: 'p38', nickname: '세아', gender: '여', mbti: 'INTP', age: 21, height: 160, region: '인천',
+    job: '대학생', stability: 2, style: '캐주얼', humor: 4, empathy: 3, energy: 4,
+    hobbies: ['게임', '카페', '영화'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '게임하다 밤새도 안 지쳐요. 같이 협동 플레이 할 사람 구해요.',
+    want: { mbti: '-N--', seeking: '남', ageMin: 21, ageMax: 26, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['캐주얼', '트렌디'], talk: 'humor', weights: w(4, 2, 3, 3, 1, 4, 4, 2, 2) }
+  },
+  {
+    id: 'p39', nickname: '연우', gender: '여', mbti: 'INTJ', age: 25, height: 167, region: '서울',
+    job: '개발자', stability: 4, style: '깔끔', humor: 3, empathy: 4, energy: 3,
+    hobbies: ['러닝', '영화', '카페'], smoking: '비흡연', drinking: '가끔', religion: '무교', marriage: '미정',
+    bio: '러닝 크루에서 만났으면 좋겠어요. 영화 이야기는 끝없이 할 수 있어요.',
+    want: { mbti: '-N--', seeking: '여', ageMin: 23, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['깔끔', '차분'], talk: 'both', weights: w(3, 1, 4, 3, 3, 5, 4, 3, 2) }
+  },
+  {
+    id: 'p40', nickname: '서하', gender: '여', mbti: 'INFJ', age: 26, height: 165, region: '경기',
+    job: '연구원', stability: 4, style: '차분', humor: 3, empathy: 5, energy: 2,
+    hobbies: ['독서', '요리', '영화'], smoking: '비흡연', drinking: '안 마심', religion: '무교', marriage: '원함',
+    bio: '느린 대화와 따뜻한 저녁을 좋아해요. 오래 가는 인연을 만나고 싶어요.',
+    want: { mbti: 'IN--', seeking: '여', ageMin: 24, ageMax: 28, heightMin: null, acceptSmoker: false, excludeReligions: [],
+      sameAreaOnly: false, styles: ['차분', '깔끔'], talk: 'empathy', weights: w(2, 1, 3, 3, 3, 5, 4, 5, 3) }
   }
 ];
 
