@@ -85,6 +85,16 @@
   .err { color: var(--accent); font-size: 13px; min-height: 1.2em; margin-top: 8px; }
   .whyhead { grid-column: 2 / -1; margin-top: 10px; font-size: 12px; font-weight: 600; letter-spacing: .06em; color: var(--accent); }
   .whyhead + .why { margin-top: 2px; }
+  .pool { margin: 10px 4px 0; font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .count { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .count .big { font-family: Georgia, serif; font-size: 56px; line-height: 1; }
+  .count .big span { font-size: 20px; margin-left: 4px; color: var(--muted); }
+  .count .label { color: var(--muted); font-size: 14px; margin: 4px 0 12px; }
+  .count .split { display: flex; gap: 12px; margin-bottom: 14px; }
+  .count .split span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 16px; background: #fff; font-size: 15px; }
+  .count .split b { font-family: Georgia, serif; font-size: 20px; }
+  .count .sub { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+  .count .sub b { color: var(--ink); }
 </style>
 </head>
 <body>
@@ -99,7 +109,7 @@
   </aside>
   <main>
     <section class="me" id="me"></section>
-    <h2>추천 순위</h2>
+    <h2 id="resultsTitle">추천 순위</h2>
     <div id="results"></div>
     <details class="excluded" id="excluded"></details>
     <div class="note">
@@ -127,6 +137,9 @@
   const AXES = [['mbtiEI', 'E', 'I', '에너지'], ['mbtiNS', 'N', 'S', '인식'], ['mbtiTF', 'T', 'F', '판단'], ['mbtiJP', 'J', 'P', '생활양식']];
   const HOBBIES = [...new Set(PROFILES.flatMap((p) => p.hobbies))].sort();
   const STORE = 'matchDemoCustom';
+  // true: 개별 후보를 숨기고 인원수(남/여)만 표시. false: 순위·점수·이유 카드를 모두 표시.
+  const HIDE_CANDIDATES = true;
+  const HIGH_SCORE = 70;   // 인원수 모드에서 "높은 점수"로 세는 기준
 
   const DEFAULT = {
     id: 'custom', nickname: '나', gender: '남', mbti: '', age: 28, height: 175, region: '서울', job: '', stability: 3,
@@ -144,6 +157,11 @@
     custom.want.weights = Object.assign({ mbti: 3 }, custom.want.weights);
   }
   const overrides = {};   // 사람별로 바꾼 중요도 (새로고침하면 초기화)
+  if (HIDE_CANDIDATES) {
+    meId = 'custom'; editing = !custom;
+    document.querySelector('header p').textContent = '내 조건을 입력하면, 가상 후보 풀에서 조건이 맞는 사람이 몇 명인지 남·여로 나누어 알려줍니다. 개별 프로필은 표시하지 않습니다.';
+    document.getElementById('resultsTitle').textContent = '매칭 현황';
+  }
 
   const base = () => (meId === 'custom' ? custom : PROFILES.find((p) => p.id === meId));
   function current() {
@@ -156,6 +174,12 @@
   function renderPeople() {
     const customBtn = `<button class="person custom" data-id="custom" aria-pressed="${meId === 'custom'}">${custom ? '내 조건 · ' + esc(custom.nickname) : '＋ 내 조건 직접 입력'}
       <small>${custom ? `${custom.gender} · ${custom.age}세 · ${esc(custom.region)}` : '내 정보와 원하는 사람을 입력'}</small></button>`;
+    if (HIDE_CANDIDATES) {
+      const mc = PROFILES.filter((p) => p.gender === '남').length, fc = PROFILES.filter((p) => p.gender === '여').length;
+      document.getElementById('people').innerHTML = customBtn +
+        `<p class="pool">가상 후보 풀 ${PROFILES.length}명<br>남 ${mc}명 · 여 ${fc}명<br><small>개별 프로필은 표시하지 않습니다</small></p>`;
+      return;
+    }
     document.getElementById('people').innerHTML = customBtn + PROFILES.map((p) =>
       `<button class="person" data-id="${p.id}" aria-pressed="${p.id === meId}">${esc(p.nickname)}
         <small>${p.gender} · ${p.age}세 · ${esc(p.region)} · ${esc(p.job)}</small></button>`).join('');
@@ -276,6 +300,20 @@
     }
     const me = current();
     const { matches, excluded } = rank(me, PROFILES);
+    if (HIDE_CANDIDATES) {
+      const n = (arr, s) => arr.filter((x) => x.profile.gender === s).length;
+      const high = matches.filter((m) => m.score >= HIGH_SCORE);
+      box.innerHTML = `
+        <div class="count">
+          <div class="big">${matches.length}<span>명</span></div>
+          <div class="label">서로의 필수 조건이 맞는 후보</div>
+          <div class="split"><span>남 <b>${n(matches, '남')}</b>명</span><span>여 <b>${n(matches, '여')}</b>명</span></div>
+          <p class="sub">그중 종합 ${HIGH_SCORE}점 이상: <b>${high.length}명</b> (남 ${n(high, '남')} · 여 ${n(high, '여')})</p>
+          <p class="sub">필수 조건(나이 범위·흡연·종교·권역)에 걸려 제외: ${excluded.length}명 (남 ${n(excluded, '남')} · 여 ${n(excluded, '여')})</p>
+          ${matches.length ? '' : '<p class="sub">조건에 맞는 후보가 없습니다. 나이 범위나 제외 조건을 넓혀 보세요.</p>'}
+        </div>`;
+      ex.style.display = 'none'; return;
+    }
     box.innerHTML = matches.length ? matches.map((m, i) => `
       <article class="card">
         <div class="rk">${i + 1}</div>
